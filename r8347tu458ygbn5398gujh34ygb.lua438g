@@ -11,7 +11,7 @@
 -- Instances: 66 | Scripts: 3 | Modules: 0 | Tags: 0
 local LMG2L = {};
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/YepimSirPwnsAlot/Scripts-Of-Mine/refs/heads/main/54t54y54yht45h45h"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/YepimSirPwnsAlot/Scripts-Of-Mine/refs/heads/main/DEEEEEE"))()
 
 -- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui
 LMG2L["ExtremeInjectorScreenGui_1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
