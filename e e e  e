@@ -1,0 +1,71 @@
+--// Settings
+local SETTINGS = {
+    BoxColor = Color3.fromRGB(0, 255, 255), -- Neon Cyan
+    TextColor = Color3.fromRGB(255, 255, 255),
+    TextSize = 14,
+    OutlineColor = Color3.fromRGB(0, 0, 0),
+}
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+
+local function CreateESP(player)
+    if player == LocalPlayer then return end
+
+    local function CharacterAdded(char)
+        -- 1. Character Highlight (Modern Box/Outline)
+        local highlight = Instance.new("Highlight")
+        highlight.Name = "ESPHighlight"
+        highlight.FillTransparency = 0.5
+        highlight.OutlineTransparency = 0
+        highlight.FillColor = SETTINGS.BoxColor
+        highlight.OutlineColor = SETTINGS.BoxColor
+        highlight.Adornee = char
+        highlight.Parent = char
+
+        -- 2. BillboardGui (Strings & Distance)
+        local billboard = Instance.new("BillboardGui")
+        billboard.Name = "ESPLabel"
+        billboard.Size = UDim2.new(0, 200, 0, 50)
+        billboard.Adornee = char:WaitForChild("Head")
+        billboard.AlwaysOnTop = true
+        billboard.ExtentsOffset = Vector3.new(0, 3, 0) -- Position above head
+        
+        local label = Instance.new("TextLabel")
+        label.BackgroundTransparency = 1
+        label.Size = UDim2.new(1, 0, 1, 0)
+        label.TextColor3 = SETTINGS.TextColor
+        label.TextStrokeTransparency = 0 -- Outline for readability
+        label.TextSize = SETTINGS.TextSize
+        label.Font = Enum.Font.RobotoMono -- Clean, modern font
+        label.Parent = billboard
+        
+        billboard.Parent = char
+
+        -- Update Loop for Distance
+        local connection
+        connection = RunService.RenderStepped:Connect(function()
+            if not char:Parent or not char:FindFirstChild("HumanoidRootPart") then
+                connection:Disconnect()
+                return
+            end
+            
+            local distance = math.floor((LocalPlayer.Character.HumanoidRootPart.Position - char.HumanoidRootPart.Position).Magnitude)
+            label.Text = string.format("%s\n[%d Studs]", player.DisplayName, distance)
+        end)
+    end
+
+    player.CharacterAdded:Connect(CharacterAdded)
+    if player.Character then
+        CharacterAdded(player.Character)
+    end
+end
+
+-- Init for existing players
+for _, player in pairs(Players:GetPlayers()) do
+    CreateESP(player)
+end
+
+-- Connection for new players
+Players.PlayerAdded:Connect(CreateESP)
