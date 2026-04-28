@@ -1,71 +1,512 @@
---// Settings
-local SETTINGS = {
-    BoxColor = Color3.fromRGB(0, 255, 255), -- Neon Cyan
-    TextColor = Color3.fromRGB(255, 255, 255),
-    TextSize = 14,
-    OutlineColor = Color3.fromRGB(0, 0, 0),
-}
+--[[ 
+    Made with Visual Studio Code Version: 1.115.0
+    i was too lazy to make a GUI and stuff so i just used a library, also im not even gonna make this obfuscated so have fun ig
+--]]
+
+--// Roadblocks Services
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Oblivion Hub | Gunfight Arena | Version 1.0.0", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Information",
+	Icon = "rbxassetid://76311199408449",
+	PremiumOnly = false
+})
+
+Tab:AddLabel("Welcome to Oblivion.")
+Tab:AddLabel("Script Made By iXayemiz")
+Tab:AddLabel("Current Script Version: 1.0.0")
+Tab:AddLabel("Join The Discord:")
+Tab:AddButton({
+    Name = "https://discord.gg/xHsMrSkkwz",
+    Callback = function()
+        setclipboard("https://discord.gg/xHsMrSkkwz")
+    end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "ESP",
+	Icon = "rbxassetid://7035631382",
+	PremiumOnly = false
+})
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+getgenv().ESPEnabled = false 
+
+local function updateHighlight(character, state)
+    local highlight = character:FindFirstChild("ESPHighlight")
+    if highlight then
+        highlight.Enabled = state
+    elseif state then
+        local newHighlight = Instance.new("Highlight")
+        newHighlight.Name = "ESPHighlight"
+        newHighlight.FillColor = Color3.fromRGB(255, 0, 0)
+        newHighlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+        newHighlight.FillTransparency = 0.5
+        newHighlight.Parent = character
+    end
+end
+
+Tab:AddToggle({
+	Name = "Enable ESP",
+	Default = false,
+	Callback = function(Value)
+		getgenv().ESPEnabled = Value
+        
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= LocalPlayer and player.Character then
+                updateHighlight(player.Character, Value)
+            end
+        end
+	end    
+})
+
+local function onCharacterAdded(character)
+    task.wait(0.5)
+    if getgenv().ESPEnabled then
+        updateHighlight(character, true)
+    end
+end
+
+local function onPlayerAdded(player)
+    player.CharacterAdded:Connect(onCharacterAdded)
+end
+
+Players.PlayerAdded:Connect(onPlayerAdded)
+
+for _, player in pairs(Players:GetPlayers()) do
+    if player ~= LocalPlayer then
+        onPlayerAdded(player)
+    end
+end
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+local tracers = {}
+
+local function createTracer(player)
+    local line = Drawing.new("Line")
+    line.Visible = false
+    line.Color = Color3.fromRGB(255, 0, 0)
+    line.Thickness = 1
+    line.Transparency = 1
+    tracers[player] = line
+end
+
+RunService.RenderStepped:Connect(function()
+    for player, line in pairs(tracers) do
+        if getgenv().StringESP and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local rootPart = player.Character.HumanoidRootPart
+            local screenPos, onScreen = Camera:WorldToViewportPoint(rootPart.Position)
+
+            if onScreen then
+                line.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y)
+                line.To = Vector2.new(screenPos.X, screenPos.Y)
+                line.Visible = true
+            else
+                line.Visible = false
+            end
+        else
+            line.Visible = false
+        end
+    end
+end)
+
+Tab:AddToggle({
+    Name = "String ESP",
+    Default = false,
+    Callback = function(Value)
+        getgenv().StringESP = Value
+        
+        if Value then
+            for _, player in pairs(Players:GetPlayers()) do
+                if player ~= LocalPlayer and not tracers[player] then
+                    createTracer(player)
+                end
+            end
+        end
+    end    
+})
+
+Players.PlayerAdded:Connect(function(player)
+    if player ~= LocalPlayer then
+        createTracer(player)
+    end
+end)
+
+Players.PlayerRemoving:Connect(function(player)
+    if tracers[player] then
+        tracers[player]:Remove()
+        tracers[player] = nil
+    end
+end)
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+local boxes = {}
+
+local function createBox()
+    local box = {
+        Top = Drawing.new("Line"),
+        Bottom = Drawing.new("Line"),
+        Left = Drawing.new("Line"),
+        Right = Drawing.new("Line")
+    }
+    
+    for _, line in pairs(box) do
+        line.Visible = false
+        line.Color = Color3.fromRGB(255, 0, 0)
+        line.Thickness = 1
+        line.Transparency = 1
+    end
+    return box
+end
+
+RunService.RenderStepped:Connect(function()
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer then
+            if getgenv().ESPBoxes and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                local char = player.Character
+                local hrp = char.HumanoidRootPart
+                
+                local screenPos, onScreen = Camera:WorldToViewportPoint(hrp.Position)
+                
+                if onScreen then
+                    local scale = 1000 / screenPos.Z 
+                    local width, height = 2 * scale, 3 * scale
+                    
+                    local box = boxes[player] or createBox()
+                    boxes[player] = box
+                    
+                    box.Top.From = Vector2.new(screenPos.X - width, screenPos.Y - height)
+                    box.Top.To = Vector2.new(screenPos.X + width, screenPos.Y - height)
+                    
+                    box.Bottom.From = Vector2.new(screenPos.X - width, screenPos.Y + height)
+                    box.Bottom.To = Vector2.new(screenPos.X + width, screenPos.Y + height)
+                    
+                    box.Left.From = Vector2.new(screenPos.X - width, screenPos.Y - height)
+                    box.Left.To = Vector2.new(screenPos.X - width, screenPos.Y + height)
+                    
+                    box.Right.From = Vector2.new(screenPos.X + width, screenPos.Y - height)
+                    box.Right.To = Vector2.new(screenPos.X + width, screenPos.Y + height)
+                    
+                    for _, line in pairs(box) do line.Visible = true end
+                else
+                    if boxes[player] then
+                        for _, line in pairs(boxes[player]) do line.Visible = false end
+                    end
+                end
+            else
+                if boxes[player] then
+                    for _, line in pairs(boxes[player]) do line.Visible = false end
+                end
+            end
+        end
+    end
+end)
+
+Tab:AddToggle({
+    Name = "ESP Boxes",
+    Default = false,
+    Callback = function(Value)
+        getgenv().ESPBoxes = Value
+    end
+})
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 
-local function CreateESP(player)
-    if player == LocalPlayer then return end
+local function createNameTag(player)
+    local char = player.Character
+    if not char then return end
+    local head = char:FindFirstChild("Head")
+    if not head or head:FindFirstChild("NameTagESP") then return end
 
-    local function CharacterAdded(char)
-        -- 1. Character Highlight (Modern Box/Outline)
-        local highlight = Instance.new("Highlight")
-        highlight.Name = "ESPHighlight"
-        highlight.FillTransparency = 0.5
-        highlight.OutlineTransparency = 0
-        highlight.FillColor = SETTINGS.BoxColor
-        highlight.OutlineColor = SETTINGS.BoxColor
-        highlight.Adornee = char
-        highlight.Parent = char
+    local billboard = Instance.new("BillboardGui")
+    billboard.Name = "NameTagESP"
+    billboard.Adornee = head
+    billboard.Size = UDim2.new(0, 200, 0, 50)
+    billboard.StudsOffset = Vector3.new(0, 3, 0)
+    billboard.AlwaysOnTop = true
+    billboard.Enabled = getgenv().ESPNames
+    
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Name = "ESPLabel"
+    textLabel.Parent = billboard
+    textLabel.BackgroundTransparency = 1
+    textLabel.Size = UDim2.new(1, 0, 1, 0)
+    textLabel.Font = Enum.Font.GothamBold
+    textLabel.TextSize = 14
+    textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    textLabel.TextStrokeTransparency = 0
+    textLabel.Text = ""
+    
+    billboard.Parent = head
+end
 
-        -- 2. BillboardGui (Strings & Distance)
-        local billboard = Instance.new("BillboardGui")
-        billboard.Name = "ESPLabel"
-        billboard.Size = UDim2.new(0, 200, 0, 50)
-        billboard.Adornee = char:WaitForChild("Head")
-        billboard.AlwaysOnTop = true
-        billboard.ExtentsOffset = Vector3.new(0, 3, 0) -- Position above head
-        
-        local label = Instance.new("TextLabel")
-        label.BackgroundTransparency = 1
-        label.Size = UDim2.new(1, 0, 1, 0)
-        label.TextColor3 = SETTINGS.TextColor
-        label.TextStrokeTransparency = 0 -- Outline for readability
-        label.TextSize = SETTINGS.TextSize
-        label.Font = Enum.Font.RobotoMono -- Clean, modern font
-        label.Parent = billboard
-        
-        billboard.Parent = char
+RunService.RenderStepped:Connect(function()
+    if not getgenv().ESPNames then return end
 
-        -- Update Loop for Distance
-        local connection
-        connection = RunService.RenderStepped:Connect(function()
-            if not char:Parent or not char:FindFirstChild("HumanoidRootPart") then
-                connection:Disconnect()
-                return
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer and player.Character then
+            local head = player.Character:FindFirstChild("Head")
+            if head then
+                local billboard = head:FindFirstChild("NameTagESP")
+                if billboard then
+                    local label = billboard:FindFirstChild("ESPLabel")
+                    if label then
+                        local hum = player.Character:FindFirstChildOfClass("Humanoid")
+                        local hp = hum and math.floor(hum.Health) or 0
+                        local dist = math.floor((head.Position - workspace.CurrentCamera.CFrame.Position).Magnitude)
+                        
+                        label.Text = string.format("%s\n[%d HP] [%d Studs]", player.Name, hp, dist)
+                        billboard.Enabled = true
+                    end
+                else
+                    createNameTag(player)
+                end
             end
+        end
+    end
+end)
+
+Tab:AddToggle({
+    Name = "ESP Names",
+    Default = false,
+    Callback = function(Value)
+        getgenv().ESPNames = Value
+        
+        if not Value then
+            for _, player in pairs(Players:GetPlayers()) do
+                if player.Character then
+                    local head = player.Character:FindFirstChild("Head")
+                    local tag = head and head:FindFirstChild("NameTagESP")
+                    if tag then tag.Enabled = false end
+                end
+            end
+        end
+    end    
+})
+
+Tab:AddToggle({
+    Name = "Enable/Disable All Forms Of ESP",
+    Default = false,
+    Callback = function(Value)
+        getgenv().ESPEnabled = Value
+        getgenv().StringESP = Value
+        getgenv().ESPBoxes = Value
+        getgenv().ESPNames = Value
+        
+        if not Value then
+            for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+                if player.Character then
+                    local highlight = player.Character:FindFirstChild("ESPHighlight")
+                    if highlight then highlight.Enabled = false end
+                    local head = player.Character:FindFirstChild("Head")
+                    local tag = head and head:FindFirstChild("NameTagESP")
+                    if tag then tag.Enabled = false end
+                end
+            end
+        end
+        
+        print("All ESP Forms set to: " .. tostring(Value))
+    end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Aimbot",
+	Icon = "rbxassetid://13557340523",
+	PremiumOnly = false
+})
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local LocalPlayer = Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+-- Configuration Variables
+getgenv().AimbotEnabled = false
+getgenv().AimbotKey = Enum.UserInputType.MouseButton2 -- Right Click
+getgenv().Smoothing = 0.5 -- Higher = Slower/Smoother
+getgenv().AimbotPart = "Head" -- Head, UpperTorso, HumanoidRootPart
+
+local function getClosestPlayer()
+    local closestPlayer = nil
+    local shortestDistance = math.huge
+    local mousePos = UserInputService:GetMouseLocation()
+
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild(getgenv().AimbotPart) then
+            local targetPart = player.Character[getgenv().AimbotPart]
+            local screenPos, onScreen = Camera:WorldToViewportPoint(targetPart.Position)
+
+            if onScreen then
+                local distance = (Vector2.new(screenPos.X, screenPos.Y) - mousePos).Magnitude
+                if distance < shortestDistance then
+                    closestPlayer = player
+                    shortestDistance = distance
+                end
+            end
+        end
+    end
+    return closestPlayer
+end
+
+RunService.RenderStepped:Connect(function()
+    if getgenv().AimbotEnabled and UserInputService:IsMouseButtonPressed(getgenv().AimbotKey) then
+        local target = getClosestPlayer()
+        if target and target.Character and target.Character:FindFirstChild(getgenv().AimbotPart) then
+            local targetPos = target.Character[getgenv().AimbotPart].Position
+            local currentCFrame = Camera.CFrame
             
-            local distance = math.floor((LocalPlayer.Character.HumanoidRootPart.Position - char.HumanoidRootPart.Position).Magnitude)
-            label.Text = string.format("%s\n[%d Studs]", player.DisplayName, distance)
-        end)
+            local targetCFrame = CFrame.new(currentCFrame.Position, targetPos)
+            Camera.CFrame = currentCFrame:Lerp(targetCFrame, getgenv().Smoothing)
+        end
     end
+end)
 
-    player.CharacterAdded:Connect(CharacterAdded)
-    if player.Character then
-        CharacterAdded(player.Character)
+Tab:AddToggle({
+    Name = "Enable/Disable Aimbot (You Have To Right Click Once You Enabled It)",
+    Default = false,
+    Callback = function(Value)
+        getgenv().AimbotEnabled = Value
+    end    
+})
+
+local Tab = Window:MakeTab({
+    Name = "Basic Scripts",
+    Icon = "rbxassetid://111491856007667",
+    PremiumOnly = false
+})
+
+local UserInputService = game:GetService("UserInputService")
+
+getgenv().InfiniteJumpEnabled = false
+
+UserInputService.JumpRequest:Connect(function()
+    if getgenv().InfiniteJumpEnabled then
+        local character = game:GetService("Players").LocalPlayer.Character
+        if character then
+            local humanoid = character:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+            end
+        end
     end
-end
+end)
 
--- Init for existing players
-for _, player in pairs(Players:GetPlayers()) do
-    CreateESP(player)
-end
+Tab:AddToggle({
+    Name = "Infinite Jump",
+    Default = false,
+    Callback = function(Value)
+        getgenv().InfiniteJumpEnabled = Value
+    end    
+})
 
--- Connection for new players
-Players.PlayerAdded:Connect(CreateESP)
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+getgenv().WalkSpeedValue = 16
+
+task.spawn(function()
+    while task.wait(0.1) do
+        local character = LocalPlayer.Character
+        if character then
+            local humanoid = character:FindFirstChildOfClass("Humanoid")
+            if humanoid and humanoid.WalkSpeed ~= getgenv().WalkSpeedValue then
+                humanoid.WalkSpeed = getgenv().WalkSpeedValue
+            end
+        end
+    end
+end)
+
+Tab:AddSlider({
+    Name = "Set Walkspeed",
+    Min = 1,
+    Max = 500,
+    Default = 16,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    ValueName = "",
+    Callback = function(Value)
+        getgenv().WalkSpeedValue = Value
+    end
+})
+
+Tab:AddSlider({
+    Name = "Set Gravity",
+    Min = 1,
+    Max = 500,
+    Default = 192,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    ValueName = "Gravity",
+    Callback = function(Value)
+        game:GetService("Workspace").Gravity = Value
+    end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Keybinds",
+	Icon = "rbxassetid://13254238395",
+	PremiumOnly = false
+})
+
+Tab:AddBind({
+	Name = "Destroy Oblivion",
+	Default = Enum.KeyCode.G,
+	Hold = false,
+	Callback = function()
+		OrionLib:Destroy()
+	end
+})
+
+Tab:AddLabel("i'll add more keybinds when i think of what to add")
+
+local Tab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://7059346373",
+	PremiumOnly = false
+})
+
+local Camera = workspace.CurrentCamera
+
+workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
+    Camera = workspace.CurrentCamera
+end)
+
+Tab:AddSlider({
+    Name = "Change FOV:",
+    Min = 0,
+    Max = 120,
+    Default = 70,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    ValueName = "FOV",
+    Callback = function(Value)
+        Camera.FieldOfView = Value
+    end
+})
+
+Tab:AddButton({
+	Name = "Destroy This Shitty Hub",
+	Callback = function()
+      	OrionLib:Destroy()
+    end
+})
+
+OrionLib:Init()
