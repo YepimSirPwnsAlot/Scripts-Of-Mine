@@ -1,662 +1,154 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-
-]=]
-
--- Instances: 66 | Scripts: 3 | Modules: 0 | Tags: 0
-local LMG2L = {};
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/YepimSirPwnsAlot/Scripts-Of-Mine/refs/heads/main/DEEEEEE"))()
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui
-LMG2L["ExtremeInjectorScreenGui_1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
-LMG2L["ExtremeInjectorScreenGui_1"]["Name"] = [[ExtremeInjectorScreenGui]];
-LMG2L["ExtremeInjectorScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame
-LMG2L["ExtremeInjectorFrame_2"] = Instance.new("Frame", LMG2L["ExtremeInjectorScreenGui_1"]);
-LMG2L["ExtremeInjectorFrame_2"]["BorderSizePixel"] = 0;
-LMG2L["ExtremeInjectorFrame_2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["ExtremeInjectorFrame_2"]["Size"] = UDim2.new(0, 418, 0, 312);
-LMG2L["ExtremeInjectorFrame_2"]["Position"] = UDim2.new(0.5, -206, 0.5, -188);
-LMG2L["ExtremeInjectorFrame_2"]["Name"] = [[ExtremeInjectorFrame]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.ExtremeInjectorImageLabel
-LMG2L["ExtremeInjectorImageLabel_3"] = Instance.new("ImageLabel", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["ExtremeInjectorImageLabel_3"]["BorderSizePixel"] = 0;
-LMG2L["ExtremeInjectorImageLabel_3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
--- LMG2L["ExtremeInjectorImageLabel_3"]["ImageContent"] = ;
-LMG2L["ExtremeInjectorImageLabel_3"]["Image"] = [[rbxassetid://137828914925363]];
-LMG2L["ExtremeInjectorImageLabel_3"]["Size"] = UDim2.new(0, 38, 0, 38);
-LMG2L["ExtremeInjectorImageLabel_3"]["BackgroundTransparency"] = 1;
-LMG2L["ExtremeInjectorImageLabel_3"]["Name"] = [[ExtremeInjectorImageLabel]];
-LMG2L["ExtremeInjectorImageLabel_3"]["Position"] = UDim2.new(0, 12, 0, 42);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.SelectButton
-LMG2L["SelectButton_4"] = Instance.new("TextButton", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["SelectButton_4"]["BorderSizePixel"] = 0;
-LMG2L["SelectButton_4"]["TextSize"] = 10;
-LMG2L["SelectButton_4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["SelectButton_4"]["Size"] = UDim2.new(0, 94, 0, 28);
-LMG2L["SelectButton_4"]["Text"] = [[Select]];
-LMG2L["SelectButton_4"]["Name"] = [[SelectButton]];
-LMG2L["SelectButton_4"]["Position"] = UDim2.new(0, 314, 0, 52);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.SelectButton.UICorner
-LMG2L["UICorner_5"] = Instance.new("UICorner", LMG2L["SelectButton_4"]);
-LMG2L["UICorner_5"]["CornerRadius"] = UDim.new(0, 6);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar
-LMG2L["TopBar_6"] = Instance.new("Frame", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["TopBar_6"]["BorderSizePixel"] = 0;
-LMG2L["TopBar_6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["TopBar_6"]["Size"] = UDim2.new(0, 418, 0, 36);
-LMG2L["TopBar_6"]["Name"] = [[TopBar]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.UICorner
-LMG2L["UICorner_7"] = Instance.new("UICorner", LMG2L["TopBar_6"]);
-LMG2L["UICorner_7"]["CornerRadius"] = UDim.new(0, 12);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.ExtremeInjectorImageLabel2
-LMG2L["ExtremeInjectorImageLabel2_8"] = Instance.new("ImageLabel", LMG2L["TopBar_6"]);
-LMG2L["ExtremeInjectorImageLabel2_8"]["BorderSizePixel"] = 0;
-LMG2L["ExtremeInjectorImageLabel2_8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
--- LMG2L["ExtremeInjectorImageLabel2_8"]["ImageContent"] = ;
-LMG2L["ExtremeInjectorImageLabel2_8"]["Image"] = [[rbxassetid://117260756964273]];
-LMG2L["ExtremeInjectorImageLabel2_8"]["Size"] = UDim2.new(0, 24, 0, 24);
-LMG2L["ExtremeInjectorImageLabel2_8"]["BackgroundTransparency"] = 1;
-LMG2L["ExtremeInjectorImageLabel2_8"]["Name"] = [[ExtremeInjectorImageLabel2]];
-LMG2L["ExtremeInjectorImageLabel2_8"]["Position"] = UDim2.new(0, 4, 0, 2);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.ExtremeInjectorImageLabel2.UICorner
-LMG2L["UICorner_9"] = Instance.new("UICorner", LMG2L["ExtremeInjectorImageLabel2_8"]);
-LMG2L["UICorner_9"]["CornerRadius"] = UDim.new(0, 10);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.Dragging_Script
-LMG2L["Dragging_Script_a"] = Instance.new("LocalScript", LMG2L["TopBar_6"]);
-LMG2L["Dragging_Script_a"]["Name"] = [[Dragging_Script]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.MinimizeFrame
-LMG2L["MinimizeFrame_b"] = Instance.new("TextLabel", LMG2L["TopBar_6"]);
-LMG2L["MinimizeFrame_b"]["BorderSizePixel"] = 0;
-LMG2L["MinimizeFrame_b"]["TextSize"] = 16;
-LMG2L["MinimizeFrame_b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["MinimizeFrame_b"]["BackgroundTransparency"] = 1;
-LMG2L["MinimizeFrame_b"]["Size"] = UDim2.new(0, 38, 0, 16);
-LMG2L["MinimizeFrame_b"]["Text"] = [[_]];
-LMG2L["MinimizeFrame_b"]["Name"] = [[MinimizeFrame]];
-LMG2L["MinimizeFrame_b"]["Position"] = UDim2.new(0, 292, 0, -4);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.ExtremeInjectorTextLabel
-LMG2L["ExtremeInjectorTextLabel_c"] = Instance.new("TextLabel", LMG2L["TopBar_6"]);
-LMG2L["ExtremeInjectorTextLabel_c"]["BorderSizePixel"] = 0;
-LMG2L["ExtremeInjectorTextLabel_c"]["TextSize"] = 10;
-LMG2L["ExtremeInjectorTextLabel_c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["ExtremeInjectorTextLabel_c"]["TextColor3"] = Color3.fromRGB(28, 43, 54);
-LMG2L["ExtremeInjectorTextLabel_c"]["BackgroundTransparency"] = 1;
-LMG2L["ExtremeInjectorTextLabel_c"]["Size"] = UDim2.new(0.2, 0, 0.3, 0);
-LMG2L["ExtremeInjectorTextLabel_c"]["Text"] = [[Extreme Injector v3.7.3 by master131]];
-LMG2L["ExtremeInjectorTextLabel_c"]["Name"] = [[ExtremeInjectorTextLabel]];
-LMG2L["ExtremeInjectorTextLabel_c"]["Position"] = UDim2.new(0, 105, 0, 8);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.Maximize
-LMG2L["Maximize_d"] = Instance.new("Frame", LMG2L["TopBar_6"]);
-LMG2L["Maximize_d"]["BorderSizePixel"] = 0;
-LMG2L["Maximize_d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["Maximize_d"]["Size"] = UDim2.new(0, 17, 0, 17);
-LMG2L["Maximize_d"]["Position"] = UDim2.new(0, 345, 0, 6);
-LMG2L["Maximize_d"]["Name"] = [[Maximize]];
-LMG2L["Maximize_d"]["BackgroundTransparency"] = 1;
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.Maximize.UICorner
-LMG2L["UICorner_e"] = Instance.new("UICorner", LMG2L["Maximize_d"]);
-LMG2L["UICorner_e"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.Maximize.UIStroke
-LMG2L["UIStroke_f"] = Instance.new("UIStroke", LMG2L["Maximize_d"]);
-LMG2L["UIStroke_f"]["Color"] = Color3.fromRGB(170, 170, 170);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.XButton
-LMG2L["XButton_10"] = Instance.new("TextButton", LMG2L["TopBar_6"]);
-LMG2L["XButton_10"]["BorderSizePixel"] = 0;
-LMG2L["XButton_10"]["TextSize"] = 18;
-LMG2L["XButton_10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["XButton_10"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-LMG2L["XButton_10"]["BackgroundTransparency"] = 1;
-LMG2L["XButton_10"]["Size"] = UDim2.new(0, 40, 0, 26);
-LMG2L["XButton_10"]["Text"] = [[X]];
-LMG2L["XButton_10"]["Name"] = [[XButton]];
-LMG2L["XButton_10"]["Position"] = UDim2.new(0, 376, 0, 2);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.XButton.Destroy_Gui
-LMG2L["Destroy_Gui_11"] = Instance.new("LocalScript", LMG2L["XButton_10"]);
-LMG2L["Destroy_Gui_11"]["Name"] = [[Destroy_Gui]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.AboutButton
-LMG2L["AboutButton_12"] = Instance.new("TextButton", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["AboutButton_12"]["BorderSizePixel"] = 0;
-LMG2L["AboutButton_12"]["TextSize"] = 10;
-LMG2L["AboutButton_12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["AboutButton_12"]["Size"] = UDim2.new(0, 126, 0, 28);
-LMG2L["AboutButton_12"]["Text"] = [[About]];
-LMG2L["AboutButton_12"]["Name"] = [[AboutButton]];
-LMG2L["AboutButton_12"]["Position"] = UDim2.new(0, 8, 0, 280);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.AboutButton.UICorner
-LMG2L["UICorner_13"] = Instance.new("UICorner", LMG2L["AboutButton_12"]);
-LMG2L["UICorner_13"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.ProcessNameRunning
-LMG2L["ProcessNameRunning_14"] = Instance.new("TextLabel", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["ProcessNameRunning_14"]["BorderSizePixel"] = 0;
-LMG2L["ProcessNameRunning_14"]["TextSize"] = 15;
-LMG2L["ProcessNameRunning_14"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-LMG2L["ProcessNameRunning_14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["ProcessNameRunning_14"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-LMG2L["ProcessNameRunning_14"]["Size"] = UDim2.new(0, 248, 0, 28);
-LMG2L["ProcessNameRunning_14"]["Text"] = [[ RobloxPlayerBeta.exe]];
-LMG2L["ProcessNameRunning_14"]["Name"] = [[ProcessNameRunning]];
-LMG2L["ProcessNameRunning_14"]["Position"] = UDim2.new(0, 61, 0, 52);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.ProcessNameRunning.UICorner
-LMG2L["UICorner_15"] = Instance.new("UICorner", LMG2L["ProcessNameRunning_14"]);
-LMG2L["UICorner_15"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.InjectButton
-LMG2L["InjectButton_16"] = Instance.new("TextButton", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["InjectButton_16"]["BorderSizePixel"] = 0;
-LMG2L["InjectButton_16"]["TextSize"] = 10;
-LMG2L["InjectButton_16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["InjectButton_16"]["Size"] = UDim2.new(0, 126, 0, 28);
-LMG2L["InjectButton_16"]["Text"] = [[Inject]];
-LMG2L["InjectButton_16"]["Name"] = [[InjectButton]];
-LMG2L["InjectButton_16"]["Position"] = UDim2.new(0, 284, 0, 280);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.InjectButton.UICorner
-LMG2L["UICorner_17"] = Instance.new("UICorner", LMG2L["InjectButton_16"]);
-LMG2L["UICorner_17"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.InjectButton.LocalScript
-LMG2L["LocalScript_18"] = Instance.new("LocalScript", LMG2L["InjectButton_16"]);
-
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.EJTXTLABEL2
-LMG2L["EJTXTLABEL2_19"] = Instance.new("TextLabel", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["EJTXTLABEL2_19"]["BorderSizePixel"] = 0;
-LMG2L["EJTXTLABEL2_19"]["TextSize"] = 15;
-LMG2L["EJTXTLABEL2_19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["EJTXTLABEL2_19"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-LMG2L["EJTXTLABEL2_19"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["EJTXTLABEL2_19"]["BackgroundTransparency"] = 1;
-LMG2L["EJTXTLABEL2_19"]["Size"] = UDim2.new(0, 84, 0, 22);
-LMG2L["EJTXTLABEL2_19"]["Text"] = [[Process Name]];
-LMG2L["EJTXTLABEL2_19"]["Name"] = [[EJTXTLABEL2]];
-LMG2L["EJTXTLABEL2_19"]["Position"] = UDim2.new(0, 60, 0, 32);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.UICorner
-LMG2L["UICorner_1a"] = Instance.new("UICorner", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["UICorner_1a"]["CornerRadius"] = UDim.new(0, 12);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy
-LMG2L["OutLineThingy_1b"] = Instance.new("Frame", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["OutLineThingy_1b"]["BorderSizePixel"] = 0;
-LMG2L["OutLineThingy_1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["OutLineThingy_1b"]["Size"] = UDim2.new(0, 398, 0, 148);
-LMG2L["OutLineThingy_1b"]["Position"] = UDim2.new(0, 10, 0, 126);
-LMG2L["OutLineThingy_1b"]["Name"] = [[OutLineThingy]];
-LMG2L["OutLineThingy_1b"]["BackgroundTransparency"] = 1;
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.Clear
-LMG2L["Clear_1c"] = Instance.new("TextButton", LMG2L["OutLineThingy_1b"]);
-LMG2L["Clear_1c"]["BorderSizePixel"] = 0;
-LMG2L["Clear_1c"]["TextSize"] = 10;
-LMG2L["Clear_1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["Clear_1c"]["Size"] = UDim2.new(0, 144, 0, 28);
-LMG2L["Clear_1c"]["Text"] = [[Clear]];
-LMG2L["Clear_1c"]["Name"] = [[Clear]];
-LMG2L["Clear_1c"]["Position"] = UDim2.new(0, 8, 0, 115);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.Clear.UICorner
-LMG2L["UICorner_1d"] = Instance.new("UICorner", LMG2L["Clear_1c"]);
-LMG2L["UICorner_1d"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy
-LMG2L["DLLThingy_1e"] = Instance.new("Frame", LMG2L["OutLineThingy_1b"]);
-LMG2L["DLLThingy_1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["DLLThingy_1e"]["Size"] = UDim2.new(0, 228, 0, 132);
-LMG2L["DLLThingy_1e"]["Position"] = UDim2.new(0, 162, 0, 10);
-LMG2L["DLLThingy_1e"]["Name"] = [[DLLThingy]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.Divider
-LMG2L["Divider_1f"] = Instance.new("Frame", LMG2L["DLLThingy_1e"]);
-LMG2L["Divider_1f"]["BorderSizePixel"] = 0;
-LMG2L["Divider_1f"]["BackgroundColor3"] = Color3.fromRGB(220, 220, 220);
-LMG2L["Divider_1f"]["Size"] = UDim2.new(0, 2, 0, 26);
-LMG2L["Divider_1f"]["Position"] = UDim2.new(0, 28, 0, 0);
-LMG2L["Divider_1f"]["Name"] = [[Divider]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.TextThingy3
-LMG2L["TextThingy3_20"] = Instance.new("TextLabel", LMG2L["DLLThingy_1e"]);
-LMG2L["TextThingy3_20"]["BorderSizePixel"] = 0;
-LMG2L["TextThingy3_20"]["TextSize"] = 15;
-LMG2L["TextThingy3_20"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-LMG2L["TextThingy3_20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["TextThingy3_20"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-LMG2L["TextThingy3_20"]["TextColor3"] = Color3.fromRGB(28, 43, 54);
-LMG2L["TextThingy3_20"]["BackgroundTransparency"] = 1;
-LMG2L["TextThingy3_20"]["Size"] = UDim2.new(0, 84, 0, 23);
-LMG2L["TextThingy3_20"]["Text"] = [[SirHurt.dll]];
-LMG2L["TextThingy3_20"]["Name"] = [[TextThingy3]];
-LMG2L["TextThingy3_20"]["Position"] = UDim2.new(0, 32, 0, 38);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.Divider2
-LMG2L["Divider2_21"] = Instance.new("Frame", LMG2L["DLLThingy_1e"]);
-LMG2L["Divider2_21"]["BorderSizePixel"] = 0;
-LMG2L["Divider2_21"]["BackgroundColor3"] = Color3.fromRGB(219, 219, 219);
-LMG2L["Divider2_21"]["Size"] = UDim2.new(0, 198, 0, 2);
-LMG2L["Divider2_21"]["Position"] = UDim2.new(0, 0, 0, 26);
-LMG2L["Divider2_21"]["Name"] = [[Divider2]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.BlueThing
-LMG2L["BlueThing_22"] = Instance.new("Frame", LMG2L["DLLThingy_1e"]);
-LMG2L["BlueThing_22"]["BorderSizePixel"] = 0;
-LMG2L["BlueThing_22"]["BackgroundColor3"] = Color3.fromRGB(9, 112, 190);
-LMG2L["BlueThing_22"]["Size"] = UDim2.new(0, 198, 0, 30);
-LMG2L["BlueThing_22"]["Position"] = UDim2.new(0, 0, 0, 96);
-LMG2L["BlueThing_22"]["Name"] = [[BlueThing]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.BlueThing.TextThingy
-LMG2L["TextThingy_23"] = Instance.new("TextLabel", LMG2L["BlueThing_22"]);
-LMG2L["TextThingy_23"]["BorderSizePixel"] = 0;
-LMG2L["TextThingy_23"]["TextSize"] = 15;
-LMG2L["TextThingy_23"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-LMG2L["TextThingy_23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["TextThingy_23"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-LMG2L["TextThingy_23"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["TextThingy_23"]["BackgroundTransparency"] = 1;
-LMG2L["TextThingy_23"]["Size"] = UDim2.new(0, 84, 0, 23);
-LMG2L["TextThingy_23"]["Text"] = [[Stigma v3.dll]];
-LMG2L["TextThingy_23"]["Name"] = [[TextThingy]];
-LMG2L["TextThingy_23"]["Position"] = UDim2.new(0, 34, 0, 2);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.TextThingy2
-LMG2L["TextThingy2_24"] = Instance.new("TextLabel", LMG2L["DLLThingy_1e"]);
-LMG2L["TextThingy2_24"]["BorderSizePixel"] = 0;
-LMG2L["TextThingy2_24"]["TextSize"] = 15;
-LMG2L["TextThingy2_24"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-LMG2L["TextThingy2_24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["TextThingy2_24"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-LMG2L["TextThingy2_24"]["TextColor3"] = Color3.fromRGB(28, 43, 54);
-LMG2L["TextThingy2_24"]["BackgroundTransparency"] = 1;
-LMG2L["TextThingy2_24"]["Size"] = UDim2.new(0, 84, 0, 23);
-LMG2L["TextThingy2_24"]["Text"] = [[Seven.dll]];
-LMG2L["TextThingy2_24"]["Name"] = [[TextThingy2]];
-LMG2L["TextThingy2_24"]["Position"] = UDim2.new(0, 34, 0, 68);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.ScrollingFrameThingy
-LMG2L["ScrollingFrameThingy_25"] = Instance.new("Frame", LMG2L["DLLThingy_1e"]);
-LMG2L["ScrollingFrameThingy_25"]["BorderSizePixel"] = 0;
-LMG2L["ScrollingFrameThingy_25"]["BackgroundColor3"] = Color3.fromRGB(233, 233, 233);
-LMG2L["ScrollingFrameThingy_25"]["Size"] = UDim2.new(0, 30, 0, 132);
-LMG2L["ScrollingFrameThingy_25"]["Position"] = UDim2.new(0, 198, 0, 0);
-LMG2L["ScrollingFrameThingy_25"]["Name"] = [[ScrollingFrameThingy]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.ScrollingFrameThingy.TheySeeMeScrollinTheyHatin
-LMG2L["TheySeeMeScrollinTheyHatin_26"] = Instance.new("Frame", LMG2L["ScrollingFrameThingy_25"]);
-LMG2L["TheySeeMeScrollinTheyHatin_26"]["BorderSizePixel"] = 0;
-LMG2L["TheySeeMeScrollinTheyHatin_26"]["BackgroundColor3"] = Color3.fromRGB(177, 177, 177);
-LMG2L["TheySeeMeScrollinTheyHatin_26"]["Size"] = UDim2.new(0, 25, 0, 32);
-LMG2L["TheySeeMeScrollinTheyHatin_26"]["Position"] = UDim2.new(0, 3, 0, 65);
-LMG2L["TheySeeMeScrollinTheyHatin_26"]["Name"] = [[TheySeeMeScrollinTheyHatin]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.ScrollingFrameThingy.UpArrow
-LMG2L["UpArrow_27"] = Instance.new("TextLabel", LMG2L["ScrollingFrameThingy_25"]);
-LMG2L["UpArrow_27"]["BorderSizePixel"] = 0;
-LMG2L["UpArrow_27"]["TextSize"] = 15;
-LMG2L["UpArrow_27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["UpArrow_27"]["BackgroundTransparency"] = 1;
-LMG2L["UpArrow_27"]["Size"] = UDim2.new(0, 30, 0, 30);
-LMG2L["UpArrow_27"]["Text"] = [[^]];
-LMG2L["UpArrow_27"]["Name"] = [[UpArrow]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.ScrollingFrameThingy.DownArrow
-LMG2L["DownArrow_28"] = Instance.new("TextLabel", LMG2L["ScrollingFrameThingy_25"]);
-LMG2L["DownArrow_28"]["BorderSizePixel"] = 0;
-LMG2L["DownArrow_28"]["TextSize"] = 15;
-LMG2L["DownArrow_28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["DownArrow_28"]["BackgroundTransparency"] = 1;
-LMG2L["DownArrow_28"]["Size"] = UDim2.new(0, 30, 0, 30);
-LMG2L["DownArrow_28"]["Text"] = [[^]];
-LMG2L["DownArrow_28"]["Rotation"] = 180;
-LMG2L["DownArrow_28"]["Name"] = [[DownArrow]];
-LMG2L["DownArrow_28"]["Position"] = UDim2.new(0, 0, 0, 102);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.SirHurtCheckMark
-LMG2L["SirHurtCheckMark_29"] = Instance.new("Frame", LMG2L["DLLThingy_1e"]);
-LMG2L["SirHurtCheckMark_29"]["BorderSizePixel"] = 0;
-LMG2L["SirHurtCheckMark_29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["SirHurtCheckMark_29"]["Size"] = UDim2.new(0, 20, 0, 20);
-LMG2L["SirHurtCheckMark_29"]["Position"] = UDim2.new(0, 8, 0, 42);
-LMG2L["SirHurtCheckMark_29"]["Name"] = [[SirHurtCheckMark]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.SirHurtCheckMark.UICorner
-LMG2L["UICorner_2a"] = Instance.new("UICorner", LMG2L["SirHurtCheckMark_29"]);
-LMG2L["UICorner_2a"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.SirHurtCheckMark.UIStroke
-LMG2L["UIStroke_2b"] = Instance.new("UIStroke", LMG2L["SirHurtCheckMark_29"]);
-
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.Divider3
-LMG2L["Divider3_2c"] = Instance.new("Frame", LMG2L["DLLThingy_1e"]);
-LMG2L["Divider3_2c"]["BorderSizePixel"] = 0;
-LMG2L["Divider3_2c"]["BackgroundColor3"] = Color3.fromRGB(219, 219, 219);
-LMG2L["Divider3_2c"]["Size"] = UDim2.new(0, 2, 0, 26);
-LMG2L["Divider3_2c"]["Position"] = UDim2.new(0, 168, 0, 0);
-LMG2L["Divider3_2c"]["Name"] = [[Divider3]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.SevenCheckMark
-LMG2L["SevenCheckMark_2d"] = Instance.new("Frame", LMG2L["DLLThingy_1e"]);
-LMG2L["SevenCheckMark_2d"]["BorderSizePixel"] = 0;
-LMG2L["SevenCheckMark_2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["SevenCheckMark_2d"]["Size"] = UDim2.new(0, 20, 0, 20);
-LMG2L["SevenCheckMark_2d"]["Position"] = UDim2.new(0, 8, 0, 70);
-LMG2L["SevenCheckMark_2d"]["Name"] = [[SevenCheckMark]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.SevenCheckMark.UICorner
-LMG2L["UICorner_2e"] = Instance.new("UICorner", LMG2L["SevenCheckMark_2d"]);
-LMG2L["UICorner_2e"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.SevenCheckMark.UIStroke
-LMG2L["UIStroke_2f"] = Instance.new("UIStroke", LMG2L["SevenCheckMark_2d"]);
-
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.DLLName
-LMG2L["DLLName_30"] = Instance.new("TextLabel", LMG2L["DLLThingy_1e"]);
-LMG2L["DLLName_30"]["BorderSizePixel"] = 0;
-LMG2L["DLLName_30"]["TextSize"] = 10;
-LMG2L["DLLName_30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["DLLName_30"]["BackgroundTransparency"] = 1;
-LMG2L["DLLName_30"]["Size"] = UDim2.new(0, 44, 0, 40);
-LMG2L["DLLName_30"]["Text"] = [[DLL Name]];
-LMG2L["DLLName_30"]["Name"] = [[DLLName]];
-LMG2L["DLLName_30"]["Position"] = UDim2.new(0, 50, 0, -6);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.StigmaCheckMark
-LMG2L["StigmaCheckMark_31"] = Instance.new("Frame", LMG2L["DLLThingy_1e"]);
-LMG2L["StigmaCheckMark_31"]["BorderSizePixel"] = 0;
-LMG2L["StigmaCheckMark_31"]["BackgroundColor3"] = Color3.fromRGB(2, 46, 255);
-LMG2L["StigmaCheckMark_31"]["Size"] = UDim2.new(0, 20, 0, 20);
-LMG2L["StigmaCheckMark_31"]["Position"] = UDim2.new(0, 8, 0, 100);
-LMG2L["StigmaCheckMark_31"]["Name"] = [[StigmaCheckMark]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.StigmaCheckMark.CheckMark
-LMG2L["CheckMark_32"] = Instance.new("ImageLabel", LMG2L["StigmaCheckMark_31"]);
-LMG2L["CheckMark_32"]["BorderSizePixel"] = 0;
-LMG2L["CheckMark_32"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
--- LMG2L["CheckMark_32"]["ImageContent"] = ;
-LMG2L["CheckMark_32"]["Image"] = [[rbxassetid://9754130783]];
-LMG2L["CheckMark_32"]["Size"] = UDim2.new(0, 19, 0, 19);
-LMG2L["CheckMark_32"]["BackgroundTransparency"] = 1;
-LMG2L["CheckMark_32"]["Name"] = [[CheckMark]];
-LMG2L["CheckMark_32"]["Position"] = UDim2.new(0, 1, 0, 1);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.DLLThingy.StigmaCheckMark.UICorner
-LMG2L["UICorner_33"] = Instance.new("UICorner", LMG2L["StigmaCheckMark_31"]);
-LMG2L["UICorner_33"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.InjectListThingy
-LMG2L["InjectListThingy_34"] = Instance.new("TextLabel", LMG2L["OutLineThingy_1b"]);
-LMG2L["InjectListThingy_34"]["BorderSizePixel"] = 0;
-LMG2L["InjectListThingy_34"]["TextSize"] = 15;
-LMG2L["InjectListThingy_34"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["InjectListThingy_34"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-LMG2L["InjectListThingy_34"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["InjectListThingy_34"]["BackgroundTransparency"] = 1;
-LMG2L["InjectListThingy_34"]["Size"] = UDim2.new(0, 80, 0, 18);
-LMG2L["InjectListThingy_34"]["Text"] = [[Inject List]];
-LMG2L["InjectListThingy_34"]["Name"] = [[InjectListThingy]];
-LMG2L["InjectListThingy_34"]["Position"] = UDim2.new(0, 2, 0, -12);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.UICorner
-LMG2L["UICorner_35"] = Instance.new("UICorner", LMG2L["OutLineThingy_1b"]);
-LMG2L["UICorner_35"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.AddDLLButton
-LMG2L["AddDLLButton_36"] = Instance.new("TextButton", LMG2L["OutLineThingy_1b"]);
-LMG2L["AddDLLButton_36"]["BorderSizePixel"] = 0;
-LMG2L["AddDLLButton_36"]["TextSize"] = 10;
-LMG2L["AddDLLButton_36"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["AddDLLButton_36"]["Size"] = UDim2.new(0, 144, 0, 28);
-LMG2L["AddDLLButton_36"]["Text"] = [[Add DLL]];
-LMG2L["AddDLLButton_36"]["Name"] = [[AddDLLButton]];
-LMG2L["AddDLLButton_36"]["Position"] = UDim2.new(0, 8, 0, 10);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.AddDLLButton.UICorner
-LMG2L["UICorner_37"] = Instance.new("UICorner", LMG2L["AddDLLButton_36"]);
-LMG2L["UICorner_37"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.Remove
-LMG2L["Remove_38"] = Instance.new("TextButton", LMG2L["OutLineThingy_1b"]);
-LMG2L["Remove_38"]["BorderSizePixel"] = 0;
-LMG2L["Remove_38"]["TextSize"] = 10;
-LMG2L["Remove_38"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["Remove_38"]["Size"] = UDim2.new(0, 144, 0, 28);
-LMG2L["Remove_38"]["Text"] = [[Remove]];
-LMG2L["Remove_38"]["Name"] = [[Remove]];
-LMG2L["Remove_38"]["Position"] = UDim2.new(0, 8, 0, 80);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.Remove.UICorner
-LMG2L["UICorner_39"] = Instance.new("UICorner", LMG2L["Remove_38"]);
-LMG2L["UICorner_39"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.UIStroke
-LMG2L["UIStroke_3a"] = Instance.new("UIStroke", LMG2L["OutLineThingy_1b"]);
-LMG2L["UIStroke_3a"]["Color"] = Color3.fromRGB(77, 77, 77);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.EnabledDisableButton
-LMG2L["EnabledDisableButton_3b"] = Instance.new("TextButton", LMG2L["OutLineThingy_1b"]);
-LMG2L["EnabledDisableButton_3b"]["BorderSizePixel"] = 0;
-LMG2L["EnabledDisableButton_3b"]["TextSize"] = 10;
-LMG2L["EnabledDisableButton_3b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["EnabledDisableButton_3b"]["Size"] = UDim2.new(0, 144, 0, 28);
-LMG2L["EnabledDisableButton_3b"]["Text"] = [[Enabled/Disable]];
-LMG2L["EnabledDisableButton_3b"]["Name"] = [[EnabledDisableButton]];
-LMG2L["EnabledDisableButton_3b"]["Position"] = UDim2.new(0, 8, 0, 45);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.OutLineThingy.EnabledDisableButton.UICorner
-LMG2L["UICorner_3c"] = Instance.new("UICorner", LMG2L["EnabledDisableButton_3b"]);
-LMG2L["UICorner_3c"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.EJTEXTLABEL4
-LMG2L["EJTEXTLABEL4_3d"] = Instance.new("TextLabel", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["EJTEXTLABEL4_3d"]["BorderSizePixel"] = 0;
-LMG2L["EJTEXTLABEL4_3d"]["TextSize"] = 15;
-LMG2L["EJTEXTLABEL4_3d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["EJTEXTLABEL4_3d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-LMG2L["EJTEXTLABEL4_3d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["EJTEXTLABEL4_3d"]["BackgroundTransparency"] = 1;
-LMG2L["EJTEXTLABEL4_3d"]["Size"] = UDim2.new(0, 84, 0, 24);
-LMG2L["EJTEXTLABEL4_3d"]["Text"] = [[ROBLOX Game Client]];
-LMG2L["EJTEXTLABEL4_3d"]["Name"] = [[EJTEXTLABEL4]];
-LMG2L["EJTEXTLABEL4_3d"]["Position"] = UDim2.new(0, 78, 0, 78);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.EJTEXTLABEL5
-LMG2L["EJTEXTLABEL5_3e"] = Instance.new("TextLabel", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["EJTEXTLABEL5_3e"]["BorderSizePixel"] = 0;
-LMG2L["EJTEXTLABEL5_3e"]["TextSize"] = 15;
-LMG2L["EJTEXTLABEL5_3e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["EJTEXTLABEL5_3e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-LMG2L["EJTEXTLABEL5_3e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["EJTEXTLABEL5_3e"]["BackgroundTransparency"] = 1;
-LMG2L["EJTEXTLABEL5_3e"]["Size"] = UDim2.new(0, 84, 0, 24);
-LMG2L["EJTEXTLABEL5_3e"]["Text"] = [[Process ID: 0x3AC8 (15048)]];
-LMG2L["EJTEXTLABEL5_3e"]["Name"] = [[EJTEXTLABEL5]];
-LMG2L["EJTEXTLABEL5_3e"]["Position"] = UDim2.new(0, 96, 0, 92);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.SettingsButton
-LMG2L["SettingsButton_3f"] = Instance.new("TextButton", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["SettingsButton_3f"]["BorderSizePixel"] = 0;
-LMG2L["SettingsButton_3f"]["TextSize"] = 10;
-LMG2L["SettingsButton_3f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-LMG2L["SettingsButton_3f"]["Size"] = UDim2.new(0, 126, 0, 28);
-LMG2L["SettingsButton_3f"]["Text"] = [[Settings]];
-LMG2L["SettingsButton_3f"]["Name"] = [[SettingsButton]];
-LMG2L["SettingsButton_3f"]["Position"] = UDim2.new(0, 146, 0, 280);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.SettingsButton.UICorner
-LMG2L["UICorner_40"] = Instance.new("UICorner", LMG2L["SettingsButton_3f"]);
-LMG2L["UICorner_40"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.UIGradient
-LMG2L["UIGradient_41"] = Instance.new("UIGradient", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["UIGradient_41"]["Rotation"] = 90;
-LMG2L["UIGradient_41"]["Offset"] = Vector2.new(0, 0.3);
-LMG2L["UIGradient_41"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(27, 140, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(19, 234, 203))};
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.CoverUp
-LMG2L["CoverUp_42"] = Instance.new("Frame", LMG2L["ExtremeInjectorFrame_2"]);
-LMG2L["CoverUp_42"]["BorderSizePixel"] = 0;
-LMG2L["CoverUp_42"]["BackgroundColor3"] = Color3.fromRGB(27, 140, 255);
-LMG2L["CoverUp_42"]["Size"] = UDim2.new(0, 418, 0, 12);
-LMG2L["CoverUp_42"]["Position"] = UDim2.new(0, 0, 0, 28);
-LMG2L["CoverUp_42"]["Name"] = [[CoverUp]];
-
-
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.Dragging_Script
-local function C_a()
-	local script = LMG2L["Dragging_Script_a"];
-	local UserInputService = game:GetService("UserInputService")	
-	
-	local dragButton = script.Parent	
-	local frameToMove = dragButton.Parent	
-	
-	local dragging	
-	local dragInput	
-	local dragStart	
-	local startPos	
-	
-	local function update(input)	
-	    local delta = input.Position - dragStart	
-	    		
-		frameToMove.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)	
-	end	
-	
-	dragButton.InputBegan:Connect(function(input)	
-		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then	
-			dragging = true	
-			dragStart = input.Position	
-			startPos = frameToMove.Position	
-				
-			input.Changed:Connect(function()	
-				if input.UserInputState == Enum.UserInputState.End then	
-					dragging = false	
-				end	
-			end)	
-		end	
-	end)	
-	
-	dragButton.InputChanged:Connect(function(input)	
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then	
-			dragInput = input	
-		end	
-	end)	
-	
-	UserInputService.InputChanged:Connect(function(input)	
-		if input == dragInput and dragging then	
-			update(input)	
-		end	
-	end)	
-end;
-task.spawn(C_a);
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.TopBar.XButton.Destroy_Gui
-local function C_11()
-	local script = LMG2L["Destroy_Gui_11"];
-	local self = script.Parent
-	local ScrenGu = self:FindFirstAncestorOfClass("ScreenGui", true)
-
-	self.MouseButton1Click:Connect(function()
-		ScrenGu:Destroy()
-	end)
-end;
-task.spawn(C_11);
--- Players.YepImNythic.PlayerGui.ExtremeInjectorScreenGui.ExtremeInjectorFrame.InjectButton.LocalScript
-local function C_18()
-	local script = LMG2L["LocalScript_18"];
-	script.Parent.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Stigma-v3-check-description-46023"))()
-	end)
-end;
-task.spawn(C_18);
-
-return LMG2L["ExtremeInjectorScreenGui_1"], require;
+-- Save this entire script as your "Main Source"
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+
+local Library = {}
+Library.__index = Library
+
+local Theme = {
+    Background = Color3.fromRGB(20, 20, 25),
+    Accent = Color3.fromRGB(0, 170, 255),
+    Text = Color3.fromRGB(240, 240, 240),
+    Darker = Color3.fromRGB(15, 15, 18),
+    Rounding = UDim.new(0, 8)
+}
+
+-- [Draggable Functionality]
+local function MakeDraggable(frame, parent)
+    local dragging, dragInput, dragStart, startPos
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = true; dragStart = input.Position; startPos = parent.Position
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(input)
+        if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+            local delta = input.Position - dragStart
+            parent.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+    end)
+    UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end
+    end)
+end
+
+function Library.new(hubName)
+    local self = setmetatable({}, Library)
+    self.Gui = Instance.new("ScreenGui")
+    self.Gui.Name = "NexusLib_Exploit"
+    self.Gui.Parent = (gethui and gethui()) or game:GetService("CoreGui") -- Compatibility for different executors
+    
+    self.Main = Instance.new("Frame")
+    self.Main.Size = UDim2.new(0, 400, 0, 300)
+    self.Main.Position = UDim2.new(0.5, -200, 0.5, -150)
+    self.Main.BackgroundColor3 = Theme.Background
+    self.Main.Parent = self.Gui
+    
+    Instance.new("UICorner", self.Main).CornerRadius = Theme.Rounding
+    local Stroke = Instance.new("UIStroke", self.Main)
+    Stroke.Color = Theme.Accent
+    Stroke.Thickness = 1.2
+
+    local TitleBar = Instance.new("Frame")
+    TitleBar.Size = UDim2.new(1, 0, 0, 35)
+    TitleBar.BackgroundTransparency = 1
+    TitleBar.Parent = self.Main
+    MakeDraggable(TitleBar, self.Main)
+
+    local Title = Instance.new("TextLabel")
+    Title.Size = UDim2.new(1, -20, 1, 0); Title.Position = UDim2.new(0, 15, 0, 0)
+    Title.BackgroundTransparency = 1; Title.Text = hubName; Title.TextColor3 = Theme.Text
+    Title.Font = Enum.Font.GothamBold; Title.TextSize = 14; Title.TextXAlignment = Enum.TextXAlignment.Left
+    Title.Parent = TitleBar
+
+    self.Container = Instance.new("ScrollingFrame")
+    self.Container.Size = UDim2.new(1, -20, 1, -50); self.Container.Position = UDim2.new(0, 10, 0, 40)
+    self.Container.BackgroundTransparency = 1; self.Container.ScrollBarThickness = 0
+    self.Container.Parent = self.Main
+
+    local Layout = Instance.new("UIListLayout", self.Container)
+    Layout.Padding = UDim.new(0, 8); Layout.SortOrder = Enum.SortOrder.LayoutOrder
+
+    return self
+end
+
+-- [Components]
+function Library:Button(text, callback)
+    local Btn = Instance.new("TextButton")
+    Btn.Size = UDim2.new(1, -10, 0, 32); Btn.BackgroundColor3 = Theme.Darker
+    Btn.Text = text; Btn.TextColor3 = Theme.Text; Btn.Font = Enum.Font.Gotham; Btn.TextSize = 13
+    Btn.Parent = self.Container
+    Instance.new("UICorner", Btn).CornerRadius = UDim.new(0, 6)
+    Btn.MouseButton1Click:Connect(callback)
+end
+
+function Library:Toggle(text, callback)
+    local Enabled = false
+    local TglFrame = Instance.new("Frame")
+    TglFrame.Size = UDim2.new(1, -10, 0, 35); TglFrame.BackgroundTransparency = 1
+    TglFrame.Parent = self.Container
+
+    local Label = Instance.new("TextLabel")
+    Label.Size = UDim2.new(1, 0, 1, 0); Label.Text = text; Label.TextColor3 = Theme.Text
+    Label.BackgroundTransparency = 1; Label.Font = Enum.Font.Gotham; Label.TextXAlignment = Enum.TextXAlignment.Left
+    Label.Parent = TglFrame
+
+    local Track = Instance.new("TextButton")
+    Track.Size = UDim2.new(0, 36, 0, 18); Track.Position = UDim2.new(1, -40, 0.5, -9)
+    Track.BackgroundColor3 = Color3.fromRGB(40, 40, 40); Track.Text = ""; Track.Parent = TglFrame
+    Instance.new("UICorner", Track).CornerRadius = UDim.new(1, 0)
+
+    local Knob = Instance.new("Frame")
+    Knob.Size = UDim2.new(0, 14, 0, 14); Knob.Position = UDim2.new(0, 2, 0.5, -7)
+    Knob.BackgroundColor3 = Color3.fromRGB(255, 255, 255); Knob.Parent = Track
+    Instance.new("UICorner", Knob).CornerRadius = UDim.new(1, 0)
+
+    Track.MouseButton1Click:Connect(function()
+        Enabled = not Enabled
+        local goal = Enabled and UDim2.new(1, -16, 0.5, -7) or UDim2.new(0, 2, 0.5, -7)
+        local col = Enabled and Theme.Accent or Color3.fromRGB(40, 40, 40)
+        TweenService:Create(Knob, TweenInfo.new(0.2), {Position = goal}):Play()
+        TweenService:Create(Track, TweenInfo.new(0.2), {BackgroundColor3 = col}):Play()
+        callback(Enabled)
+    end)
+end
+
+function Library:Slider(text, min, max, default, callback)
+    local SliderFrame = Instance.new("Frame")
+    SliderFrame.Size = UDim2.new(1, -10, 0, 45); SliderFrame.BackgroundTransparency = 1
+    SliderFrame.Parent = self.Container
+
+    local Label = Instance.new("TextLabel")
+    Label.Text = text .. " : " .. default; Label.Size = UDim2.new(1, 0, 0, 20)
+    Label.TextColor3 = Theme.Text; Label.BackgroundTransparency = 1; Label.Font = Enum.Font.Gotham
+    Label.TextXAlignment = Enum.TextXAlignment.Left; Label.Parent = SliderFrame
+
+    local Bar = Instance.new("TextButton")
+    Bar.Size = UDim2.new(1, 0, 0, 4); Bar.Position = UDim2.new(0, 0, 0, 30)
+    Bar.BackgroundColor3 = Color3.fromRGB(40, 40, 40); Bar.Text = ""; Bar.AutoButtonColor = false
+    Bar.Parent = SliderFrame
+    
+    local Fill = Instance.new("Frame")
+    Fill.Size = UDim2.new((default - min) / (max - min), 0, 1, 0); Fill.BackgroundColor3 = Theme.Accent
+    Fill.BorderSizePixel = 0; Fill.Parent = Bar
+
+    local dragging = false
+    local function update()
+        local percent = math.clamp((Mouse.X - Bar.AbsolutePosition.X) / Bar.AbsoluteSize.X, 0, 1)
+        local value = math.floor(min + (max - min) * percent)
+        Fill.Size = UDim2.new(percent, 0, 1, 0)
+        Label.Text = text .. " : " .. value
+        callback(value)
+    end
+
+    Bar.MouseButton1Down:Connect(function() dragging = true end)
+    UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end
+    end)
+    RunService.RenderStepped:Connect(function() if dragging then update() end end)
+end
+
+return Library
